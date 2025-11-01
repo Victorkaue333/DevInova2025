@@ -85,12 +85,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 feedback.className = 'erro';
                 feedback.innerHTML = '<strong>Ops! Verifique os erros:</strong><br>' + erros.join('<br>');
             } else {
-                // Se tudo estiver OK
-                feedback.className = 'sucesso';
-                feedback.innerHTML = `Inscrição para ${nome.value} realizada com sucesso! Nos vemos no DevInova 2025.`;
+                formInscricao.querySelectorAll('input, select, button').forEach(el => el.disabled = true);
+                const submitButton = formInscricao.querySelector('button[type="submit"]');
+                submitButton.innerHTML = 'Processando...';
                 
-                // Limpa o formulário após o sucesso
-                formInscricao.reset();
+                setTimeout(() => {
+                    feedback.className = 'sucesso';
+                    feedback.innerHTML = `Inscrição para ${nome.value} realizada com sucesso! Nos vemos no DevInova 2025.`;
+                    
+                    setTimeout(() => {
+                        formInscricao.reset();
+                        formInscricao.querySelectorAll('input, select, button').forEach(el => el.disabled = false);
+                        submitButton.innerHTML = 'Confirmar Inscrição';
+                    }, 2000);
+                }, 1500);
             }
         });
     }

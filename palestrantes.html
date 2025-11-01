@@ -3,15 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça os especialistas que palestrarão no DevInova 2025. Visionários em IA, Web3, Cibersegurança e mais.">
+    <meta name="keywords" content="palestrantes, especialistas, DevInova, tecnologia, conferência">
+    
+    <meta property="og:title" content="Palestrantes - DevInova 2025">
+    <meta property="og:description" content="Conheça as mentes brilhantes que compartilharão seus conhecimentos no DevInova 2025.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devinova2025.netlify.app/palestrantes.html">
+    
     <title>Palestrantes - DevInova 2025</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     
-    <header>
+    <header role="banner">
         <div class="container">
             <h1>DevInova 2025</h1>
-            <nav>
+            <nav role="navigation" aria-label="Menu principal">
                 <ul>
                     <li><a href="index.html">Início</a></li>
                     <li><a href="palestrantes.html" class="active">Palestrantes</a></li>
@@ -21,10 +30,10 @@
         </div>
     </header>
 
-    <main>
-        <section id="lista-palestrantes">
+    <main role="main">
+        <section id="lista-palestrantes" aria-labelledby="palestrantes-heading">
             <div class="container">
-                <h2>Nossos Visionários e Especialistas</h2>
+                <h2 id="palestrantes-heading">Nossos Visionários e Especialistas</h2>
                 <p>Conheça as mentes brilhantes que compartilharão seus conhecimentos no DevInova 2025.</p>
                 
                 <div class="grid-palestrantes">
@@ -67,7 +76,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <p>&copy; 2025 DevInova. Todos os direitos reservados.</p>
         </div>
