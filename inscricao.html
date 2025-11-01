@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição - DevInova 2025</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <h1>DevInova 2025</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="palestrantes.html">Palestrantes</a></li>
+                    <li><a href="inscricao.html" class="active">Inscrição</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="formulario-inscricao">
+            <div class="container">
+                <h2>Garanta Sua Vaga no DevInova 2025!</h2>
+                <p>Preencha o formulário abaixo para confirmar sua presença na conferência de tecnologia do ano.</p>
+
+                <div id="form-feedback"></div>
+
+                <form id="form-inscricao">
+                    <div class="form-grupo">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome completo">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" placeholder="seu-email@exemplo.com">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="empresa">Empresa / Instituição (opcional):</label>
+                        <input type="text" id="empresa" name="empresa" placeholder="Nome da sua empresa ou universidade">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="interesse">Área de Interesse Principal:</label>
+                        <select id="interesse" name="interesse">
+                            <option value="">-- Selecione uma área --</option>
+                            <option value="ia">Inteligência Artificial / Machine Learning</option>
+                            <option value="webdev">Desenvolvimento Web (Front/Back-end)</option>
+                            <option value="ciberseguranca">Cibersegurança</option>
+                            <option value="cloud">Cloud Computing / DevOps</option>
+                            <option value="web3">Web3 / Blockchain</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    <div class="form-grupo">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">Desejo receber novidades sobre eventos futuros.</label>
+                    </div>
+                    
+                    <button type="submit" class="btn-cta">Confirmar Inscrição</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DevInova. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
