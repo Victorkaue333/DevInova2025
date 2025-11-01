@@ -1,5 +1,6 @@
 # DevInova 2025
-Repositório criado em aula do Curso Fic com o intuito de fazer uma atividade para estruturação de site
+Repositório criado em aula do Curso Fic com o intuito de fazer uma atividade para estruturação de site.
+link do site: https://devinova2025.netlify.app/
 
 Atividade:
 -Páginas: Desenvolver um total de 3 páginas utilizando HTML.
