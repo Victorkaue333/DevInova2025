@@ -5,10 +5,14 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f0f2f5; /* Um cinza claro */
+    background-color: #f0f2f5;
     color: #333;
 }
 
@@ -17,6 +21,33 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     overflow: hidden;
+}
+
+/* --- Animações --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-on-scroll {
+    animation: fadeIn 0.8s ease-out forwards;
 }
 
 /* --- Cores e Paleta --- */
@@ -81,13 +112,21 @@ header nav ul li a.active {
     border-radius: 8px;
     font-weight: bold;
     font-size: 18px;
-    transition: background-color 0.3s ease-in-out, transform 0.2s;
+    transition: background-color 0.3s ease-in-out, transform 0.2s, box-shadow 0.3s;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: none;
+    cursor: pointer;
 }
 
 .btn-cta:hover {
-    background: #0056b3; /* Tom mais escuro do azul */
+    background: #0056b3;
     transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.btn-cta:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 /* --- Estilos do Index --- */
@@ -202,11 +241,12 @@ header nav ul li a.active {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .motivo:hover {
     transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .motivo img {
@@ -261,11 +301,12 @@ header nav ul li a.active {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     text-align: center;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .palestrante-card:hover {
     transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
 .palestrante-card img {
@@ -469,12 +510,16 @@ footer p {
         margin: 0 10px;
     }
 
+    #banner {
+        padding: 80px 20px;
+    }
+
     #banner h2 {
-        font-size: 38px;
+        font-size: 32px;
     }
 
     #banner p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     #countdown-timer {
@@ -490,5 +535,51 @@ footer p {
 
     .motivos-grid, .grid-palestrantes {
         grid-template-columns: 1fr;
+    }
+
+    #por-que-participar h2,
+    #lista-palestrantes h2,
+    #formulario-inscricao h2 {
+        font-size: 28px;
+    }
+
+    #formulario-inscricao .container {
+        padding: 25px;
+    }
+
+    .btn-cta {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 22px;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    #banner h2 {
+        font-size: 26px;
+    }
+
+    #banner p {
+        font-size: 14px;
+    }
+
+    .box-tempo span:first-child {
+        font-size: 36px;
+    }
+
+    .box-tempo span:last-child {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 95%;
     }
 }
