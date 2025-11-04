@@ -30,6 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Se a contagem terminar
             if (distancia < 0) {
                 clearInterval(intervalo);
+                // Atualiza o HTML para mostrar a mensagem de "começou"
+                const contagemTitulo = document.getElementById('countdown-heading');
+                if(contagemTitulo) {
+                    contagemTitulo.innerText = ''; // Limpa o título "Faltam para..."
+                }
                 countdownElement.innerHTML = "<h3>O EVENTO JÁ COMEÇOU!</h3>";
             }
         }, 1000);
@@ -41,72 +46,62 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- LÓGICA DA PÁGINA INSCRIÇÃO (VALIDAÇÃO DO FORMULÁRIO) ---
+    // --- LÓGICA DA PÁGINA INSCRIÇÃO (MODAL) ---
     
     // Procura se o formulário existe na página atual
-    const formInscricao = document.getElementById('form-inscricao');
-    if (formInscricao) {
+    const form = document.getElementById("form-inscricao");
+    
+    // SÓ executa o código do formulário/modal se o formulário existir nesta página
+    if (form) {
         
-        formInscricao.addEventListener('submit', (evento) => {
-            // Previne o envio padrão do formulário (que recarregaria a página)
-            evento.preventDefault(); 
+        // Seleciona os elementos do formulário e do modal DENTRO do IF
+        const feedbackDiv = document.getElementById("form-feedback");
+        const modalOverlay = document.getElementById("modal-overlay");
+        const modalCloseBtn = document.getElementById("modal-close");
 
-            // Pega os elementos do formulário
-            const nome = document.getElementById('nome');
-            const email = document.getElementById('email');
-            const interesse = document.getElementById('interesse');
-            const newsletter = document.getElementById('newsletter'); // Checkbox da newsletter
-            const feedback = document.getElementById('form-feedback');
+        // 1. Ouve o envio (submit) do formulário
+        form.addEventListener("submit", (e) => {
+            
+            // Previne o recarregamento da página
+            e.preventDefault(); 
+            
+            // Esconde mensagens de erro antigas
+            feedbackDiv.style.display = "none";
+            feedbackDiv.className = "";
 
-            // Limpa mensagens de erro/sucesso anteriores
-            feedback.innerHTML = '';
-            feedback.className = ''; // Remove classes de erro/sucesso
-
-            let erros = [];
-
-            // Validações
-            if (nome.value.trim() === '') { // .trim() remove espaços em branco
-                erros.push('O campo Nome Completo é obrigatório.');
-            }
-            if (email.value.trim() === '') {
-                erros.push('O campo E-mail é obrigatório.');
-            } else if (!validarEmail(email.value)) { // Validação de formato de email
-                erros.push('Por favor, insira um e-mail válido.');
-            }
-            if (interesse.value === '') {
-                erros.push('Você deve selecionar uma Área de Interesse.');
-            }
-            // A newsletter é opcional, então não precisa de validação para ser marcada.
-            // Se o usuário QUISER aceitar termos de serviço, aí sim faríamos:
-            // if (!termos.checked) { erros.push('Você deve aceitar os termos.'); }
-
-            // Exibe os erros ou o sucesso
-            if (erros.length > 0) {
-                feedback.className = 'erro';
-                feedback.innerHTML = '<strong>Ops! Verifique os erros:</strong><br>' + erros.join('<br>');
-            } else {
-                formInscricao.querySelectorAll('input, select, button').forEach(el => el.disabled = true);
-                const submitButton = formInscricao.querySelector('button[type="submit"]');
-                submitButton.innerHTML = 'Processando...';
+            // 2. Verifica se o formulário é válido (campos 'required' preenchidos)
+            if (form.checkValidity()) {
                 
-                setTimeout(() => {
-                    feedback.className = 'sucesso';
-                    feedback.innerHTML = `Inscrição para ${nome.value} realizada com sucesso! Nos vemos no DevInova 2025.`;
-                    
-                    setTimeout(() => {
-                        formInscricao.reset();
-                        formInscricao.querySelectorAll('input, select, button').forEach(el => el.disabled = false);
-                        submitButton.innerHTML = 'Confirmar Inscrição';
-                    }, 2000);
-                }, 1500);
+                // SUCESSO: Mostra o modal
+                modalOverlay.classList.add("mostrar");
+                
+                // Limpa o formulário
+                form.reset();
+
+            } else {
+                
+                // ERRO: Mostra a mensagem de erro
+                feedbackDiv.textContent = "Por favor, preencha todos os campos obrigatórios.";
+                feedbackDiv.className = "erro"; // Usa a classe 'erro' do seu CSS
+                feedbackDiv.style.display = "block"; // Garante que o div de erro apareça
+                
+                // Força a validação do navegador a mostrar quais campos faltam
+                form.reportValidity();
+            }
+        });
+
+        // 3. Ouve o clique no botão "Fechar" do modal
+        modalCloseBtn.addEventListener("click", () => {
+            modalOverlay.classList.remove("mostrar");
+        });
+        
+        // 4. (Opcional) Fecha o modal se clicar no fundo escuro
+        modalOverlay.addEventListener("click", (e) => {
+            // Verifica se o clique foi no overlay (fundo) e não no modal-content
+            if (e.target === modalOverlay) {
+                modalOverlay.classList.remove("mostrar");
             }
         });
     }
 
-    // Função auxiliar para validar o formato do e-mail
-    function validarEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(String(email).toLowerCase());
-    }
-
-});
+}); 

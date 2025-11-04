@@ -12,8 +12,8 @@ html {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f0f2f5;
-    color: #333;
+    background-color: var(--light-bg-alt); /* Fundo cinza-claro */
+    color: var(--text-dark);
 }
 
 .container {
@@ -50,22 +50,24 @@ body {
     animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* --- Cores e Paleta --- */
+/* --- Cores e Paleta "Neon Tech" --- */
 :root {
-    --primary-color: #007bff; /* Azul vibrante */
-    --secondary-color: #6f42c1; /* Roxo */
-    --dark-bg: #212529; /* Preto quase escuro */
-    --light-bg: #ffffff;
-    --text-color: #333;
-    --border-color: #dee2e6;
+    --primary-color: #00f2c3;   /* Verde-Ciano Tech (para CTAs e destaques) */
+    --secondary-color: #5e17eb; /* Roxo Vibrante (para seções de destaque) */
+    --dark-bg: #12121f;         /* Azul-Noite (para cabeçalho, rodapé, banner) */
+    --light-bg: #ffffff;        /* Branco puro (para cards) */
+    --light-bg-alt: #f4f7f6;    /* Um cinza muito claro para o body */
+    --text-light: #e5e5e5;      /* Texto para fundos escuros (não branco puro) */
+    --text-dark: #212529;       /* Texto para fundos claros */
+    --border-color-light: #dee2e6;
 }
 
 /* --- Cabeçalho e Navegação --- */
 header {
     background: var(--dark-bg);
-    color: #fff;
+    color: var(--text-light); /* Texto claro */
     padding: 20px 0;
-    border-bottom: 4px solid var(--primary-color);
+    border-bottom: 4px solid var(--primary-color); /* Borda no novo ciano */
 }
 
 header .container {
@@ -89,7 +91,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #fff;
+    color: var(--text-light); /* Texto claro */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
@@ -106,53 +108,49 @@ header nav ul li a.active {
 .btn-cta {
     display: inline-block;
     background: var(--primary-color);
-    color: #fff;
+    color: #111; /* O ciano é tão brilhante que texto ESCURO fica melhor */
     padding: 12px 28px;
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
     font-size: 18px;
     transition: background-color 0.3s ease-in-out, transform 0.2s, box-shadow 0.3s;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    /* Sombra sutil na cor do botão */
+    box-shadow: 0 4px 10px rgba(0, 242, 195, 0.3); 
     border: none;
     cursor: pointer;
 }
 
 .btn-cta:hover {
-    background: #0056b3;
+    background: #00c9a7; /* Um tom de ciano levemente mais escuro */
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 15px rgba(0, 242, 195, 0.4);
 }
 
 .btn-cta:active {
     transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0, 242, 195, 0.3);
 }
 
 /* --- Estilos do Index --- */
 
 /* Banner */
 #banner {
-    background: var(--dark-bg) url('https://via.placeholder.com/1500x500?text=DevInova+2025+Tech+Background') no-repeat center center/cover;
-    color: #fff;
+    /* O fundo escuro já é suficiente, o overlay não é mais necessário */
+    background: var(--dark-bg); 
+    color: var(--text-light);
     text-align: center;
     padding: 120px 20px;
     position: relative;
     overflow: hidden;
 }
 
-#banner::before { /* Overlay escuro para melhorar legibilidade do texto */
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
+#banner::before { /* Remove o overlay antigo */
+    content: none;
 }
 
 #banner .container {
-    position: relative; /* Para garantir que o conteúdo fique acima do overlay */
+    position: relative; 
     z-index: 1;
 }
 
@@ -160,18 +158,20 @@ header nav ul li a.active {
     font-size: 52px;
     margin-bottom: 15px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: #fff; /* Título principal pode ser branco puro para destaque */
 }
 
 #banner p {
     font-size: 22px;
     margin-bottom: 40px;
     opacity: 0.9;
+    color: var(--text-light); /* Texto claro */
 }
 
 /* Contagem Regressiva */
 #contagem {
     padding: 50px 0;
-    background: var(--secondary-color); /* Roxo */
+    background: var(--secondary-color); /* Novo roxo vibrante */
     color: #fff;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -187,11 +187,11 @@ header nav ul li a.active {
     display: flex;
     justify-content: center;
     gap: 30px;
-    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+    flex-wrap: wrap; 
 }
 
 .box-tempo {
-    background: rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.25); /* Um pouco mais de contraste */
     padding: 25px 30px;
     border-radius: 10px;
     min-width: 130px;
@@ -221,13 +221,13 @@ header nav ul li a.active {
 #por-que-participar {
     padding: 80px 0;
     text-align: center;
-    background: var(--light-bg);
+    background: var(--light-bg); /* Fundo branco puro para os cards */
 }
 
 #por-que-participar h2 {
     font-size: 38px;
     margin-bottom: 50px;
-    color: var(--dark-bg);
+    color: var(--text-dark);
 }
 
 .motivos-grid {
@@ -252,7 +252,7 @@ header nav ul li a.active {
 .motivo img {
     max-width: 100%;
     height: 180px;
-    object-fit: contain; /* Para ícones e logos, melhor 'contain' */
+    object-fit: contain; 
     border-radius: 5px;
     margin-bottom: 20px;
 }
@@ -260,7 +260,7 @@ header nav ul li a.active {
 .motivo h3 {
     font-size: 24px;
     margin-bottom: 10px;
-    color: var(--primary-color);
+    color: var(--secondary-color); /* Título do card no novo roxo */
 }
 
 .motivo p {
@@ -271,21 +271,25 @@ header nav ul li a.active {
 /* --- Estilos de Palestrantes --- */
 #lista-palestrantes {
     padding: 80px 0;
-    background: var(--f0f2f5);
-}
+    background: var(--light-bg-alt); /* Fundo cinza-claro */
+    }
 
 #lista-palestrantes h2 {
     text-align: center;
     font-size: 38px;
-    margin-bottom: 20px;
-    color: var(--dark-bg);
-}
+    margin-bottom: 15px; /* Diminuímos levemente a margem do h2 */
+    color: var(--text-dark);
+    }
 
-#lista-palestrantes > p { /* O parágrafo logo abaixo do h2 */
+#lista-palestrantes h2 + p { 
     text-align: center;
-    margin-bottom: 50px;
+    /* Aumentamos a margem inferior para dar mais espaço antes dos cards */
+    margin-bottom: 60px; 
     font-size: 18px;
     color: #666;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .grid-palestrantes {
@@ -296,7 +300,7 @@ header nav ul li a.active {
 }
 
 .palestrante-card {
-    background: #fff;
+    background: var(--light-bg); /* Cards com fundo branco */
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
@@ -312,20 +316,20 @@ header nav ul li a.active {
 .palestrante-card img {
     width: 120px;
     height: 120px;
-    border-radius: 50%; /* Imagens redondas para fotos de pessoas */
+    border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
-    border: 4px solid var(--primary-color);
+    border: 4px solid var(--primary-color); /* Borda na cor ciano */
 }
 
 .palestrante-card h3 {
     font-size: 26px;
     margin-bottom: 5px;
-    color: var(--dark-bg);
+    color: var(--text-dark);
 }
 
 .palestrante-card .titulo {
-    color: var(--primary-color);
+    color: var(--secondary-color); /* Título no novo roxo */
     font-weight: bold;
     margin-bottom: 15px;
     font-size: 15px;
@@ -337,8 +341,8 @@ header nav ul li a.active {
 }
 
 .agenda-previa {
-    background: var(--dark-bg);
-    color: #fff;
+    background: var(--dark-bg); /* Fundo azul-noite */
+    color: var(--text-light);
     padding: 40px;
     border-radius: 10px;
     max-width: 800px;
@@ -350,7 +354,7 @@ header nav ul li a.active {
     font-size: 28px;
     margin-bottom: 20px;
     text-align: center;
-    color: var(--primary-color);
+    color: var(--primary-color); /* Título da agenda no ciano vibrante */
 }
 
 .agenda-previa p {
@@ -376,7 +380,7 @@ header nav ul li a.active {
 }
 
 .agenda-previa ul li::before {
-    content: '🚀'; /* Ícone */
+    content: '🚀'; 
     margin-right: 15px;
     font-size: 20px;
 }
@@ -385,12 +389,12 @@ header nav ul li a.active {
 /* --- Estilos da Inscrição (Formulário) --- */
 #formulario-inscricao {
     padding: 80px 0;
-    background: var(--light-bg);
+    background: var(--light-bg-alt); /* Fundo cinza-claro */
 }
 
 #formulario-inscricao .container {
     max-width: 700px;
-    background: #fff;
+    background: var(--light-bg); /* Formulário branco */
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
@@ -400,7 +404,7 @@ header nav ul li a.active {
     text-align: center;
     font-size: 38px;
     margin-bottom: 15px;
-    color: var(--dark-bg);
+    color: var(--text-dark);
 }
 
 #formulario-inscricao > p {
@@ -418,7 +422,7 @@ header nav ul li a.active {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: var(--text-color);
+    color: var(--text-dark);
     font-size: 17px;
 }
 
@@ -427,7 +431,7 @@ header nav ul li a.active {
 .form-grupo select {
     width: 100%;
     padding: 14px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color-light);
     border-radius: 8px;
     font-size: 16px;
     transition: border-color 0.3s;
@@ -436,19 +440,19 @@ header nav ul li a.active {
 .form-grupo input[type="text"]:focus,
 .form-grupo input[type="email"]:focus,
 .form-grupo select:focus {
-    border-color: var(--primary-color);
+    border-color: var(--secondary-color); /* Foco no novo roxo */
     outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 0 3px rgba(94, 23, 235, 0.25); /* Sombra de foco roxa */
 }
 
 .form-grupo input[type="checkbox"] {
     margin-right: 12px;
-    transform: scale(1.2); /* Aumenta o checkbox */
+    transform: scale(1.2); 
 }
 
 .form-grupo label[for="newsletter"] {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: middle; 
     margin-bottom: 0;
     font-weight: normal;
 }
@@ -460,7 +464,7 @@ header nav ul li a.active {
     margin-bottom: 30px;
     border-radius: 8px;
     font-weight: bold;
-    display: none; /* O JS vai exibir */
+    display: none; 
     font-size: 16px;
     line-height: 1.5;
 }
@@ -487,11 +491,104 @@ footer {
     text-align: center;
     padding: 40px 0;
     margin-top: 40px;
-    border-top: 4px solid var(--primary-color);
+    border-top: 4px solid var(--primary-color); /* Borda no ciano */
 }
 
 footer p {
     font-size: 15px;
+}
+/* --- Estilos do Modal de Sucesso --- */
+
+#modal-overlay {
+    position: fixed; /* Fica por cima de tudo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+    
+    /* Centraliza o modal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Começa escondido */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    
+    z-index: 1000;
+}
+
+/* Classe que o JS vai adicionar para mostrar o modal */
+#modal-overlay.mostrar {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--light-bg);
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    
+    /* Animação de "zoom" */
+    transform: scale(0.9);
+    transition: transform 0.3s ease-out;
+}
+
+#modal-overlay.mostrar .modal-content {
+    transform: scale(1);
+}
+
+.modal-icon {
+    font-size: 5rem; /* ~80px */
+    color: #28a745; /* Verde sucesso */
+    margin-bottom: 15px;
+    line-height: 1;
+}
+
+.modal-content h2 {
+    color: var(--text-dark);
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    color: #555;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+/* Reutiliza o estilo do botão, mas com a cor secundária (roxa) */
+#modal-close {
+    background: var(--secondary-color);
+    box-shadow: 0 4px 10px rgba(94, 23, 235, 0.3);
+    color: #fff;
+}
+
+#modal-close:hover {
+    background: #4a13b3; /* Roxo um pouco mais escuro */
+}
+
+/* --- Estilização dos Ícones (Bootstrap Icons) --- */
+
+/* Esconde a tag <img> antiga, se ainda existir */
+.motivo img {
+    display: none;
+}
+
+/* Estilo para os novos ícones <i> */
+.motivo i {
+    display: block;
+    font-size: 4.5rem; 
+    margin-bottom: 25px; 
+    color: var(--secondary-color);
+    height: 80px; 
+    line-height: 1;
 }
 
 /* --- Responsividade Básica --- */
