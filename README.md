@@ -4,7 +4,7 @@
 
 "DevInova 2025" é o site de uma conferência de tecnologia fictícia, focado em inovação, desenvolvimento, IA, Web3 e Cibersegurança. Este projeto de front-end simula um portal real de evento, permitindo que os usuários explorem a programação, conheçam os palestrantes e se inscrevam.
 
-**[➡️ Acesse a demonstração ao vivo aqui](https://SEU-LINK-AQUI.netlify.app/)**
+**[➡️ Acesse a demonstração ao vivo aqui](https://devinova2025.netlify.app/)**
 *(Substitua pelo link do seu site no Netlify, Vercel ou GitHub Pages)*
 
 ---
@@ -36,22 +36,6 @@ Este projeto foi construído utilizando as seguintes tecnologias:
 * **CSS3:** Para toda a estilização, utilizando Flexbox, Grid Layout e Variáveis CSS.
 * **JavaScript (ES6+):** Para a interatividade da contagem regressiva e a validação/modal do formulário.
 * **Bootstrap Icons:** Para a iconografia do site.
-
----
-
-## 🏃 Como Executar Localmente
-
-Este é um projeto de front-end estático. Você não precisa de um servidor ou dependências.
-
-1.  Clone o repositório:
-    ```bash
-    git clone [https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git](https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git)
-    ```
-2.  Navegue até a pasta do projeto:
-    ```bash
-    cd devinova-2025
-    ```
-3.  Abra o arquivo `index.html` diretamente no seu navegador de preferência.
 
 ---
 
