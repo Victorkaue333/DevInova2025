@@ -3,15 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DevInova 2025 - A maior conferência de tecnologia do Brasil. IA, Machine Learning, Web3, Cibersegurança e mais. 15 a 17 de Outubro em São Paulo.">
+    <meta name="keywords" content="tecnologia, conferência, DevInova, IA, inteligência artificial, web3, desenvolvimento, programação, São Paulo">
+    <meta name="author" content="DevInova">
+    
+    <meta property="og:title" content="DevInova 2025 - Sua Conferência de Tecnologia">
+    <meta property="og:description" content="O futuro da tecnologia começa aqui! Junte-se a nós de 15 a 17 de Outubro no Centro de Convenções TechHub, São Paulo.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devinova2025.netlify.app">
+    <meta property="og:image" content="https://devinova2025.netlify.app/images/og-image.jpg">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DevInova 2025 - Sua Conferência de Tecnologia">
+    <meta name="twitter:description" content="O futuro da tecnologia começa aqui! Junte-se a nós de 15 a 17 de Outubro.">
+    <meta name="twitter:image" content="https://devinova2025.netlify.app/images/og-image.jpg">
+    
     <title>DevInova 2025 - Sua Conferência de Tecnologia</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="stylesheet" href="css/style.css">
-</head>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    </head>
 <body>
     
-    <header>
+    <header role="banner">
         <div class="container">
             <h1>DevInova 2025</h1>
-            <nav>
+            <nav role="navigation" aria-label="Menu principal">
                 <ul>
                     <li><a href="index.html" class="active">Início</a></li>
                     <li><a href="palestrantes.html">Palestrantes</a></li>
@@ -21,19 +39,19 @@
         </div>
     </header>
 
-    <main>
-        <section id="banner">
+    <main role="main">
+        <section id="banner" aria-labelledby="banner-title">
             <div class="container">
-                <h2>O FUTURO DA TECNOLOGIA COMEÇA AQUI!</h2>
-                <p>Data: 15 a 17 de Outubro de 2025 | Local: Centro de Convenções TechHub, São Paulo</p>
-                <a href="inscricao.html" class="btn-cta">Garanta Sua Vaga!</a>
+                <h2 id="banner-title">O FUTURO DA TECNOLOGIA COMEÇA AQUI!</h2>
+                <p>Data: 03 a 05 de Novembro de 2025 | Local: Centro de Convenções TechHub, São Paulo</p>
+                <a href="inscricao.html" class="btn-cta" aria-label="Inscrever-se no DevInova 2025">Garanta Sua Vaga!</a>
             </div>
         </section>
 
-        <section id="contagem">
+        <section id="contagem" aria-labelledby="countdown-heading">
             <div class="container">
-                <h3>Faltam para o DevInova 2025...</h3>
-                <div id="countdown-timer">
+                <h3 id="countdown-heading">Faltam para o DevInova 2025...</h3>
+                <div id="countdown-timer" role="timer" aria-live="polite" aria-atomic="true">
                     <div class="box-tempo">
                         <span id="dias">00</span>
                         <span>Dias</span>
@@ -54,31 +72,35 @@
             </div>
         </section>
 
-        <section id="por-que-participar">
-            <div class="container">
-                <h2>Por que participar do DevInova 2025?</h2>
-                <div class="motivos-grid">
-                    <div class="motivo">
-                        <img src="https://via.placeholder.com/300x200?text=Novas+Tecnologias" alt="Ícone de tecnologias emergentes">
-                        <h3>Descubra as Últimas Tendências</h3>
-                        <p>Explore Inteligência Artificial, Machine Learning, Web3, Cibersegurança e mais.</p>
-                    </div>
-                    <div class="motivo">
-                        <img src="https://via.placeholder.com/300x200?text=Networking" alt="Pessoas fazendo networking">
-                        <h3>Conecte-se com Inovadores</h3>
-                        <p>Amplie sua rede profissional com líderes de mercado e talentos da área.</p>
-                    </div>
-                    <div class="motivo">
-                        <img src="https://via.placeholder.com/300x200?text=Workshops" alt="Pessoa em um workshop">
-                        <h3>Aprenda com Especialistas</h3>
-                        <p>Participe de workshops práticos e palestras inspiradoras com os melhores.</p>
-                    </div>
+        <section id="por-que-participar" class="animate-on-scroll">
+        <div class="container">
+            <h2>Por que participar do DevInova 2025?</h2>
+            <div class="motivos-grid">
+                
+                <div class="motivo">
+                    <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
+                    <h3>Descubra as Últimas Tendências</h3>
+                    <p>Explore Inteligência Artificial, Machine Learning, Web3, Cibersegurança e mais.</p>
                 </div>
+
+                <div class="motivo">
+                    <i class="bi bi-people-fill" aria-hidden="true"></i>
+                    <h3>Conecte-se com Inovadores</h3>
+                    <p>Amplie sua rede profissional com líderes de mercado e talentos da área.</p>
+                </div>
+
+                <div class="motivo">
+                    <i class="bi bi-easel-fill" aria-hidden="true"></i>
+                    <h3>Aprenda com Especialistas</h3>
+                    <p>Participe de workshops práticos e palestras inspiradoras com os melhores.</p>
+                </div>
+
             </div>
-        </section>
+        </div>
+    </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <p>&copy; 2025 DevInova. Todos os direitos reservados.</p>
         </div>
