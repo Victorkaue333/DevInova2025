@@ -1,19 +1,67 @@
-# DevInova 2025
-Repositório criado em aula do Curso Fic com o intuito de fazer uma atividade para estruturação de site.
+# DevInova 2025 - Site de Conferência Tech
 
-Atividade:
--Páginas: Desenvolver um total de 3 páginas utilizando HTML.
--O index deve conter 3 Sessões no mínimo.
--Estilização: Criar um arquivo CSS para definir a aparência visual do site.
--Interatividade: Incluir um arquivo JavaScript para adicionar funcionalidades dinâmicas.
-Conteúdo e Layout:
+![Status](https://img.shields.io/badge/Status-Concluído-green)
 
--Navegação: Implementar um menu de navegação para facilitar o acesso às diferentes páginas.
--Cabeçalho e Rodapé: O site deve conter seções de Cabeçalho (Header) e Rodapé (Footer) em todas as páginas.
--Mídia: As páginas devem incluir imagens para enriquecer o conteúdo.
--Enviem o link do repositório no GitHub referente a atividade. 
+"DevInova 2025" é o site de uma conferência de tecnologia fictícia, focado em inovação, desenvolvimento, IA, Web3 e Cibersegurança. Este projeto de front-end simula um portal real de evento, permitindo que os usuários explorem a programação, conheçam os palestrantes e se inscrevam.
 
-OBS: O repositório precisa ser público
+**[➡️ Acesse a demonstração ao vivo aqui](https://SEU-LINK-AQUI.netlify.app/)**
+*(Substitua pelo link do seu site no Netlify, Vercel ou GitHub Pages)*
 
-SOBRE O SISTEMA:
+---
 
+
+## 🚀 Sobre o Projeto
+
+O site é composto por três páginas principais, todas responsivas:
+
+* **Página Inicial (`index.html`):** A landing page principal. Contém um banner de chamada (CTA), uma contagem regressiva interativa para o evento e a seção "Por que participar?".
+* **Palestrantes (`palestrantes.html`):** Uma página que apresenta os palestrantes fictícios do evento em um layout de grade.
+* **Inscrição (`inscricao.html`):** Um formulário funcional para o usuário garantir sua vaga.
+
+### Funcionalidades Principais
+
+* **Navegação Completa:** `Header` e `Footer` consistentes em todas as páginas.
+* **Design Moderno:** Estilizado com uma paleta de cores "Neon Tech" (fundo escuro, roxo e ciano vibrantes).
+* **Contagem Regressiva (JS):** Um script que calcula e exibe em tempo real o tempo restante até a data do evento.
+* **Formulário Interativo (JS):** O formulário de inscrição possui validação de campos e exibe um **modal de sucesso** ao ser enviado corretamente.
+* **Responsividade:** O layout se adapta a diferentes tamanhos de tela, de desktops a dispositivos móveis.
+
+---
+
+## 💻 Tecnologias Utilizadas
+
+Este projeto foi construído utilizando as seguintes tecnologias:
+
+* **HTML5:** Para a estrutura semântica do site.
+* **CSS3:** Para toda a estilização, utilizando Flexbox, Grid Layout e Variáveis CSS.
+* **JavaScript (ES6+):** Para a interatividade da contagem regressiva e a validação/modal do formulário.
+* **Bootstrap Icons:** Para a iconografia do site.
+
+---
+
+## 🏃 Como Executar Localmente
+
+Este é um projeto de front-end estático. Você não precisa de um servidor ou dependências.
+
+1.  Clone o repositório:
+    ```bash
+    git clone [https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git](https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git)
+    ```
+2.  Navegue até a pasta do projeto:
+    ```bash
+    cd devinova-2025
+    ```
+3.  Abra o arquivo `index.html` diretamente no seu navegador de preferência.
+
+---
+
+## 🎓 Contexto Acadêmico
+
+Este repositório foi originalmente criado como uma atividade para o **Curso Fic**. O objetivo era aplicar conceitos de desenvolvimento web front-end para construir um site estruturado, cumprindo os seguintes requisitos:
+
+* Desenvolver 3 páginas (HTML).
+* A página `index` deveria conter no mínimo 3 seções.
+* Estilização via arquivo CSS externo.
+* Interatividade com arquivo JavaScript externo.
+* Implementação de navegação, cabeçalho e rodapé.
+* Inclusão de mídias (imagens/ícones).
