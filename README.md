@@ -5,7 +5,7 @@
 "DevInova 2025" é o site de uma conferência de tecnologia fictícia, focado em inovação, desenvolvimento, IA, Web3 e Cibersegurança. Este projeto de front-end simula um portal real de evento, permitindo que os usuários explorem a programação, conheçam os palestrantes e se inscrevam.
 
 **[➡️ Acesse a demonstração ao vivo aqui](https://devinova2025.netlify.app/)**
-*(Substitua pelo link do seu site no Netlify, Vercel ou GitHub Pages)*
+
 
 ---
 
